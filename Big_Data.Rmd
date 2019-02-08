@@ -1,0 +1,217 @@
+---
+title: "BIG DATA                              "
+subtitle: ".small[een zegen of een bedreiging?]"
+author: ".small[Karin Groothuis-Oudshoorn]"
+date: ".small[`r gsub(' 0', ' ', format(Sys.Date(), format='%b %d, %Y'))`]"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: xaringan-themer.css
+    nature:
+      highlightStyle: solarized-dark
+      highlightLines: true
+      countIncrementalSlides: false
+      titleSlideClass: ["right","top"]
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(comment = "##")
+```
+
+```{r xaringan-themer, include = FALSE}
+library(xaringanthemer)
+
+UTcss <- list(
+     ".hljs-tomorrow-night-bright .hljs" = list(
+        "background" = "#10102c",
+        "border-radius"="5px"),
+     ".remark-inline-code" = list(
+        "background" = "#E0E0E0",
+        "color" = "#10102c",
+        "border-radius" = "3px",
+        "padding" = "2px"),
+     ".inverse .remark-inline-code" = list(
+        "background" = "#10102c",
+        "color" = "#ececf8",
+        "border-radius" = "3px",
+        "padding" = "2px"),
+     ".small" = list("font-size" = "75%"),
+     ".remark-code-line-highlighted" = list(
+        "background-color" = "rgba(255,0,255,0.2)"),
+     "sup" = list("font-size" = "14px"),
+     "h1, h2, h3" = list(
+        "margin-top"=".15em", 
+        "margin-bottom"=".15em"),
+     ".pull-left60" = list(
+        "float" = "left",
+        "width" = "58%" ),
+     ".pull-right40" = list(
+        "float" = "right",
+        "width" = "38%" ),
+     ".pull-right30" = list(
+        "float" = "right",
+        "width" = "30%" ),
+     "a" = list("text-decoration" = "underline"),
+     ".inverse a" = list("color" = "#cbd3a3"),
+     "body" = list("line-height" = "1.4")
+    )
+
+mono_accent(code_font_google = google_font("Fira Mono"),
+            header_font_google = google_font("Roboto Condensed"),
+            extra_css = UTcss,
+            title_slide_background_color = "#662460",
+            title_slide_background_image = "images/Big-Data-Maps.jpg",
+            title_slide_background_position = "bottom left",
+            title_slide_background_size = "contain"
+)
+```
+
+
+class: center
+
+# Wat is Big Data?
+
+![4 V's](images/Bigdata-4Vs.png)
+
+
+---
+
+# **Volume**
+
+- Exponentiele groei hoeveelheid data
+- Toename rekencapaciteit computers
+
+      - **Wet van Moore**: verdubbeling rekencapaciteit ongeveer per 2 jaar
+
+
+![](images/supercomputer.png){width=50%}
+
+---
+
+# **Variety**
+
+Verscheidenheid aan gegevens die opgeslagen, verwerkt en geanalyseerd worden
+    - bv: 
+    - geluids- en beeldbestanden
+    - foto's 
+    - gps-data
+    - medische dossiers
+    - bonuskaarten
+    - zoekgedrag internet     
+    - data sociale netwerken
+    - etcetera
+    
+.pull-right[![](images/persoon.tif) ]
+    
+---
+
+
+# **Velocity**
+
+- de snelheid waarmee de data verzameld wordt of opgevraagd kan worden
+- de tijdelijkheid van de data
+
+(https://www.youtube.com/watch?v=aE1kA0Jy0Xg)
+
+
+---
+
+# **Veracity**
+
+- betrouwbaarheid van de data
+
+![](images/garbage-in-garbage-out.jpg)
+
+
+---
+class: center
+
+# **Garbage in = Garbage uit**
+
+<img src="images/garbage-in-garbage-out.jpg" height = "200px" width = "300px" />
+
+--
+
+<img src="images/vuilnisbelt.tif" height = "350px" width = "500px" />
+
+
+---
+
+# ** 3 niveau's data science**
+
+1. Information retrieval
+      - zoeken in een database 
+      - informatie uit teksten halen
+      - Google search
+2. Information enrichment
+      - data verrijken
+      - bv spelfouten automatisch corrigeren in teksten
+      - DNA annotatie (genetisch materiaal relateren aan de positie van het gen in het genoom)
+3. Data mining / Machine learning / Artificial Intelligence
+      
+
+---
+
+# **Data mining**
+
+patroon herkenning op basis van (veel) data 
+
+
+.pull-left[
+<img src="images/data_mess2.png" >
+]
+
+.pull-right[
+<img src="images/cartoon-nsa-cat-videos-ufo-pizza.gif" >
+]
+
+
+---
+
+# **Machine Learning**
+
+Het laten leren van een computer op basis van data
+.pull-left[
+algoritme = recept
+    - classificeren
+    - voorspellen
+    - clusteren
+    - bv Siri africhten]
+
+.pull-right[
+
+
+<img src="images/valentine.gif" />]
+
+
+
+---
+
+# **Artificial Intelligence**
+
+Kunstmatige intelligentie: functies van intelligentie bij niet-levende creaties
+    - Robots
+    - Zelfrijdende autos
+
+.pull-left[
+<img src="images/IBMjeopardy.png" />]
+.pull-right[
+<img src="images/figure_jeopardy.png" />]
+
+
+---
+
+# **BIG DATA: een zegen?**
+
+Algoritmen gebaseerd op historische data kunnen net zo bevooroordeeld en zelfs racistisch zijn als mensen:
+    - risico-algoritme voor hypotheken
+    - voorspelling van criminaliteit
+    - selectie van kandidaten voor een functie
+.pull-left[
+Is dat slecht of goed?
+    - Algoritme is vaak een black-box
+Vertrouwen we dat of is het beangstigend?]
+
+.pull-right[
+<img src="images/weapons.png" />]
